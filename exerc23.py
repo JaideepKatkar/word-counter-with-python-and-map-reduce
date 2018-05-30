@@ -51,7 +51,7 @@ results = s.run_server(password="changeme")
 w = csv.writer(open("result4.csv", "w"))
 wfilter = csv.writer(open("result5.csv", "w"))
 
-from result5 import authors
+from filter import authors
 for k, v in results.items():
     w.writerow([k,str(v).replace("[","").replace("]", "").replace("'","").replace(' ','').replace('"','')])
 if (k in authors):
