@@ -2,7 +2,7 @@ import mincemeat
 import glob
 import csv
 
-text_files = glob.glob('C:\\Temp\\arq_exerc\\obras\\*')
+text_files = glob.glob('obras/*')
 
 def file_contents(file_name):
     f = open(file_name)
@@ -48,10 +48,10 @@ s.reducefn = reducefn
 
 results = s.run_server(password="changeme")
 
-w = csv.writer(open("C:\\Temp\\arq_exerc\\result4.csv", "w"))
-wfilter = csv.writer(open("C:\\Temp\\arq_exerc\\result5.csv", "w"))
+w = csv.writer(open("result4.csv", "w"))
+wfilter = csv.writer(open("result5.csv", "w"))
 
-from filter import authors
+from result5 import authors
 for k, v in results.items():
     w.writerow([k,str(v).replace("[","").replace("]", "").replace("'","").replace(' ','').replace('"','')])
 if (k in authors):
